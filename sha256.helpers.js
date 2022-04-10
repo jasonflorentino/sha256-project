@@ -18,9 +18,9 @@ function matchResults(results, expected) {
 
   for (let i = 0; i < expected.length; i++) {
     if (results[i] !== expected[i]) {
-      console.log(
-        `results[${i}] doesn't match: expected ${expected[i]}, got ${results[i]}`
-      );
+      console.log(`results[${i}] doesn't match!`);
+      console.log(`expected: ${expected[i]}`);
+      console.log(`     got: ${results[i]}`);
       pass = false;
     }
   }

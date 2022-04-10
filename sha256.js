@@ -4,13 +4,13 @@ const { padding } = require("./lib/padding");
 const { compress } = require("./lib/compress");
 
 /**
- * This implementation of SHA-256 is for LEARNING ONLY!
+ * This implementation of SHA-256 is for learning!
  * Don't use this for actual cryptography!
  */
 function sha256(message) {
   // Create an array of bytes from the input message.
   let buffer = Buffer.from(message);
-  // Pad the message to fill 64 byte blocks.
+  // Pad the message to fit blocks of 64 bytes.
   let paddedMessage = Buffer.concat([buffer, padding(buffer.length)]);
   // Initialze state - this will be used as input for hashing with the first
   // block, with each resulting state used as input with the next block.
@@ -23,6 +23,8 @@ function sha256(message) {
   }
 
   // Produce hex string from the final state.
+  // Because the final state in the chain is returned as the
+  // hash, it can be exploited with a length extension attack.
   let hash = "";
   for (let x of state) {
     hash += x.toString(16).padStart(8, "0");
@@ -36,4 +38,6 @@ module.exports = {
 
 // Run using:
 // node sha256.js "your message in quotes"
-console.log(sha256(process.argv[2] || ''));
+if (require.main === module) {
+  console.log(sha256(process.argv[2] || ''));
+}
