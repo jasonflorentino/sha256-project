@@ -9,8 +9,7 @@ function bigIntToNumber(b) {
 }
 
 function assert(msg, pass, val) {
-  if (!pass) 
-    throw new Error(`Assertion Error: Expected "${msg}", got ${val}`);
+  if (!pass) throw new Error(`Assertion Error: Expected "${msg}", got ${val}`);
 }
 
 function matchResults(results, expected) {
@@ -25,6 +24,6 @@ function matchResults(results, expected) {
     }
   }
 
-  console.log(pass ? 'pass' : 'fail');
+  console.log(pass ? "pass" : "fail");
   return pass;
 }

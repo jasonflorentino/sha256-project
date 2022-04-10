@@ -39,5 +39,5 @@ module.exports = {
 // Run using:
 // node sha256.js "your message in quotes"
 if (require.main === module) {
-  console.log(sha256(process.argv[2] || ''));
+  console.log(sha256(process.argv[2] || ""));
 }
