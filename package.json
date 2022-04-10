@@ -1,0 +1,17 @@
+{
+  "name": "sha256",
+  "version": "1.0.0",
+  "description": "Doing Jack O'Connor's SHA-256 project",
+  "main": "sha256.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "node sha256.test.js"
+  },
+  "keywords": [
+    "sha256"
+  ],
+  "author": "",
+  "license": "ISC"
+}
