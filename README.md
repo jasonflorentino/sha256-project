@@ -34,7 +34,6 @@ Because this was meant for learning, little effort has been made to optimize its
 
 There are also some code paths that involve JavaScript BigInts.  
 BigInt operations are not constant time and so are vulnerable to timing attacks.  
-Another reason this code is not meant for serious cryptography.
 
 ## Notes
 
